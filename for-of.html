@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FOR_OF</title>
+</head>
+<body>
+   <script>
+   	console.log("----FOR OF----");
+    console.log("Exemplo 01");
+
+    const numeros = [ 10, 11, 22, 23, 34, 45, 66, 17, 28, 93, 101 ]//Um array com lista de números em ordem crescente
+
+    for (const numero of numeros) {//Dentro do for: criação da variável "numero" que terá acesso aos itens do array "numeros"
+    console.log(numero)//Imprime todos os números dando quebra de linha
+    }
+
+    console.log("Exemplo 02");
+
+    const carros = [//Um array com 5 listas de informações de carros + atribuiçoes
+    { id: 1, modelo: 'Corsa', marca: 'Chevrolet', preco: 18000 },
+    { id: 2, modelo: 'Punto', marca: 'Fiat', preco: 12000 },
+    { id: 3, modelo: 'Gol', marca: 'Volkswagen', preco: 14000 },
+    { id: 4, modelo: 'Saveiro', marca: 'Volkswagen', preco: 20000 },
+    { id: 5, modelo: 'Uno', marca: 'Fiat', preco: 12000 }
+    ]
+
+    let total1 = 0 //criação de variável "total" + atribuição "0"
+
+    for (const carro of carros) {//Dentro do for: criação da variável "carro" que terá acesso aos itens do array "carros"
+    total1 += carro.preco//"total" recebe o preço das 5 lista do array "carros"
+    }
+
+    // converte o número para o padrão monetário
+    const valorFinal = Number(total1).toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+    })
+
+    console.log(valorFinal) //Imprime a soma de todos os preços do array "carros" = R$ 76,000.00
+
+    console.log("Exemplo 03");
+
+    const artigo = document.querySelectorAll('article > p')//Criação da variável "artigo" que busca a class ".article" de todos os parágrafos 
+
+    for (const paragrafo of artigo) {//Dentro do for: criação da variável "paragrafo" que terá acesso as "class" de "artigo"
+    paragrafo.classList.add("read")//Modificação da nomenclatura de todas "class" dos parágrafos
+    }
+   </script>
+</body>
+</html>

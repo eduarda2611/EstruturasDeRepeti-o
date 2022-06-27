@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FOR_IN</title>
+</head>
+<body>
+   <script>
+    console.log("----FOR IN----");
+    console.log("Exemplo 01");
+    
+    const cores = [ 'Verde', 'Amarelo', 'Azul', 'Branco' ]//Um array com lista de cores
+
+    for (const index in cores) {// Dentro do for: criação da variável "index" que terá acesso aos itens do array "cores"
+    console.log(index, cores[index])// Imprime a posição e cada item do array
+    }
+    
+    console.log("-");
+    console.log("Exemplo 02");
+
+   	const pessoa = {//Um array lista de informação pessoal
+    nome: 'Bruno',//criação de variável + atribuição
+    idade: 25//criação de variável + atribuição
+    }
+
+    for (const index in pessoa) {// Dentro do for: criação da variável "index" que terá acesso aos itens do array "pessoa"
+    console.log(`${index} - ${pessoa[index]}`)//Imprime a variável + a atribuição da variável
+    }
+    
+    console.log("-");
+    console.log("Exemplo 03");
+
+    const produtos = [//Um array com 3 listas de produtos com informações + atribuições  
+    { descricao: 'Resma Ofício', valor: 11.50, quantidade: 10 },
+    { descricao: 'Lapis preto', valor: 0.50, quantidade: 3 },
+    { descricao: 'Transferidor plastico', valor: 1.20, quantidade: 4 }
+    ]
+
+    let total = 0//criação de variável "total" + atribuição "0"
+
+    for (const index in produtos) {//Dentro do for: criação da variável "index" que terá acesso aos itens do array "produtos"
+    const { valor, quantidade } = produtos[index]//criação de variável que carrega somente 2 itens do array "produtos" que 
+                                                 //mostra que está nesse array que "index" tem acesso
+
+    total += valor * quantidade//"total" recebe a multiplicação de "valor" com "quantidade"
+    }
+
+    console.log(total) //Imprime 121.3
+
+   </script>
+   <h2 c></h2>
+</body>
+</html>

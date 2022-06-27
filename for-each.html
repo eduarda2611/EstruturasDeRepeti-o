@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FOR_EACH</title>
+</head>
+<body>
+   <script>
+   	console.log("----FOR EACH----");
+    console.log("Exemplo 01");
+
+    var numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//Um array com lista de 11 números de 0 a 10
+    var total = 0;//criação de variável "total" + atribuição "0"
+
+    function somar(item) {//Função "somar()" com parâmetro "item"
+    total += item;//"total" recebe o valor dos itens do array "numeros"
+    }
+
+    numeros.forEach(somar);//O forEach chama a função "somar()" para o array "numeros"
+    console.log(total);//Imprime a soma dos itens
+
+    console.log("-");
+    console.log("Exemplo 02");
+
+    var numeros1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//Um array com lista de 11 números de 0 a 10
+    var total2 = 0;//"total" recebe o valor dos itens do array "numeros1"
+
+    function somar1(item, indice) {//Função "somar1()" com os parâmetros "item" e "indice"
+       total2 += item;//"total2" recebe o valor dos itens do array "numeros1"
+       console.log("[índice " + indice + "]= " + total2 + " -> ");//Imprime a posição(indice) e a soma do valor armazenado por "total2" + o próximo número até finalizar todos os itens do array
+    }
+
+    numeros1.forEach(somar1);//O forEach chama a função "somar()" para o array "numeros1"
+    
+    console.log("-");
+    console.log("Exemplo 03");
+
+    var numeros2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//Um array com lista de 11 números de 0 a 10
+    var total3 = 0;//"total2" recebe o valor dos itens do array "numeros2"
+
+    function somar2(item, indice) {//Função "somar()" com os parâmetros "item" e "indice"
+    total3 += item;//"total3" recebe o valor dos itens do array "numeros2"
+    numeros2[indice] = total3;//É igualado o "indice"(posição) do array "numeros2" à "total3"
+    }
+
+    numeros2.forEach(somar2);//O forEach chama a função "somar2()" para o array "numeros2"
+    console.log(numeros2);//Imprime os itens do array "numeros2"
+
+    console.log("-");
+    console.log("Exemplo 04");
+    
+    var marcas = ["Fiat", "Chevrolet", "Ford", "Volkswagen"]//Um array com lista de marcas de carros
+    var marcasIniciadasComF = [];//Criação da variável "marcasIniciadasComF" e igualada ao valor zero
+    var novoIndice = 0;//Criação da variável "novoIndice" e igualada ao valor zero
+
+    function selecionarMarcas(item, indice) {//Função " selecionarMarcas()" com os parâmetros "item" e "indice"
+    if (marcas[indice].indexOf("F") == 0) {//Condição: é iniciada com a busca dos nomes que acompanha "F" e começa sem nenhuma valor
+        marcasIniciadasComF[novoIndice] = marcas[indice];//Á "marcasIniciadasComF" é atribuído o indice do array "marcas"
+        novoIndice++;//Criado o incremento para parar a condição só quando todas as mrcas com a letra "F" for encontradas no array "marcas"
+    }
+    }
+
+    marcas.forEach(selecionarMarcas);//O forEach chama a função "selecionarMarcas()" para o array "marcas"
+    console.log(marcasIniciadasComF);//Imprime no valor de "marcasIniciadasComF"
+
+    console.log("-");
+    console.log("Exemplo 05");
+    
+    var nomes = ["Alberto", "Alex", "Sandro", "Roberta"];//Um array com lista de nomes de pessoas
+
+    function converterParaMaisculo(item, indice) {//Função "converterParaMaisculo()" com os parâmetros "item" e "indice"
+    nomes[indice] = nomes[indice].toUpperCase();//modificando os itens: coloca todos os nomes em maiúsculo (ex.:LUCCAS)
+    }
+
+    nomes.forEach(converterParaMaisculo);//O forEach chama a função "converterParaMaisculo()" para o array "nomes"
+    console.log(nomes);//Imprime modificação dos itens do array "nomes"
+
+    console.log("-");
+    console.log("Exemplo 06");
+
+    var nomes1 = ["Alberto", "Alex", "Sandro", "Ana Roberta"];//Um array com lista de nomes de pessoas
+    var tamanhoNome = 0;//Criação da variável "tamanhoNome" e igualada ao valor zero
+    var nome = "";//Criação da variável "nome" e igualada a nada
+
+    function maiorNome(item, indice) {//Função "maiorNome()" com os parâmetros "item" e "indice"
+    if (nomes1[indice].length > tamanhoNome) {//Condição: é iniciada com a busca do tamanho(".lenght") de todos os itens e mostra que tem que ser menor que a variável "tamanhoNome"
+        nome = nomes1[indice];//"nome" verifica o tamanho dos itens do array "nomes1" e carrega o item com maior tamanho
+        tamanhoNome = nomes1[indice].length;//"tamanhoNome" incrementa a função
+    }
+    }
+
+    nomes1.forEach(maiorNome);//O forEach chama a função "maiorNome()" para o array "nomes1"
+    console.log(nome);//Imprime o item com maior tamanho do array
+
+
+
+
+
+
+
+
+   </script>
+</body>
+</html>
